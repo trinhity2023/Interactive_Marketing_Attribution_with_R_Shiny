@@ -4,6 +4,6 @@ This R project leverages R Shiny to provide Starbucks with a comprehensive marke
 
 It offers insights into important metrics from the first project as such as response rates, offer ranking, and customer demographics. 
 
-Additionally, the dashboard provides new insights into low engagement user tactics, offer effectiveness, and potential store locations to inform marketing strategy.
+Additionally, the dashboard provides new insights into low engagement users, offer effectiveness, and potential store locations to inform marketing strategy.
 
 Check out the [RShiny app](https://rewardsoffermarketingattribution2.shinyapps.io/starbucksv2/) here!
