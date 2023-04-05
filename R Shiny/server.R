@@ -346,7 +346,7 @@ server <- function(input, output) {
     channel_response_rate_df$channels <- reorder(channel_response_rate_df$channels, 
                                                  channel_response_rate_df$channel_response_rate)
     
-    channel_response_rate_df$channel_response_rate <- channel_response_rate_df$channel_response_rate - 6
+    channel_response_rate_df$channel_response_rate <- channel_response_rate_df$channel_response_rate 
     
     ggplot(channel_response_rate_df, aes(x = channels, y = channel_response_rate)) +
       geom_bar(stat = "identity", fill = "#74add1") +
