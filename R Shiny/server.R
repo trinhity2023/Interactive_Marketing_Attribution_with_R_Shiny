@@ -1,6 +1,5 @@
-#server.R 
-#BLUE BARS
-# Load necessary libraries
+#server.R
+library(shiny)
 library(leaflet.extras)
 library(RColorBrewer)
 library(leaflet) 
@@ -12,7 +11,7 @@ library(scales)
 library(plotly)
 library(readr)
 
-source('map2.R')
+source('map3.R')
 source('cohort.R')
 source('funnel.R')
 source('tenure.R')
@@ -21,11 +20,13 @@ source('avg_spend.R')
 source('user_growth.R')
 source('channel_response.R')  
 
-server <- function(input, output) {
+# Define server logic
+function(input, output) {
   
-  output$map2 <- renderLeaflet({
-    map2
-  })  
+  # Render the map
+  output$map3 <- renderLeaflet({
+    map3
+  })
   
   output$member_plot <- renderPlot({
     calculate_members(transcript)
@@ -346,7 +347,7 @@ server <- function(input, output) {
     channel_response_rate_df$channels <- reorder(channel_response_rate_df$channels, 
                                                  channel_response_rate_df$channel_response_rate)
     
-    channel_response_rate_df$channel_response_rate <- channel_response_rate_df$channel_response_rate 
+    channel_response_rate_df$channel_response_rate <- channel_response_rate_df$channel_response_rate - 6
     
     ggplot(channel_response_rate_df, aes(x = channels, y = channel_response_rate)) +
       geom_bar(stat = "identity", fill = "#74add1") +
